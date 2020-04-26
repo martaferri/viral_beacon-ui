@@ -1,0 +1,306 @@
+/* line 5, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/style.scss */
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #E5E5E5;
+  height: 100%;
+  margin: 0;
+}
+/* line 11, ../sass/style.scss */
+body nav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 50px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #FFFFFF;
+  /* Black */
+  overflow-x: visible;
+  /* Disable horizontal scroll */
+}
+/* line 21, ../sass/style.scss */
+body nav #logo {
+  background-color: #E9AE56;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+/* line 27, ../sass/style.scss */
+body nav #logo img {
+  height: 40px;
+  width: auto;
+  margin-top: 5px;
+}
+/* line 35, ../sass/style.scss */
+body nav #nav-content {
+  padding-top: 20px;
+}
+/* line 38, ../sass/style.scss */
+body nav #nav-content a {
+  padding: 1.2em 1em;
+  text-decoration: none;
+  font-size: 10px;
+  color: #DEDBDB;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+/* line 47, ../sass/style.scss */
+body nav #nav-content a.selected {
+  color: #A4A4A4;
+  border-left: 3px solid #E9AE56;
+}
+/* line 51, ../sass/style.scss */
+body nav #nav-content a:hover {
+  color: #A4A4A4;
+}
+/* line 54, ../sass/style.scss */
+body nav #nav-content a:hover .icon-text {
+  visibility: visible;
+}
+/* line 59, ../sass/style.scss */
+body nav #nav-content a i {
+  font-size: 20px;
+}
+/* line 63, ../sass/style.scss */
+body nav #nav-content a .icon-text {
+  visibility: hidden;
+  width: 50px;
+  background-color: #A4A4A4;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 10;
+  left: 90%;
+  font-weight: lighter;
+}
+/* line 76, ../sass/style.scss */
+body nav #nav-content a .icon-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent #A4A4A4 transparent transparent;
+}
+/* line 92, ../sass/style.scss */
+body main {
+  margin-left: 50px;
+  /* Same as the width of the sidebar */
+}
+/* line 95, ../sass/style.scss */
+body main #main-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-rows: 0.2fr 0.2fr 0.6fr 3fr;
+  gap: 20px 10px;
+  grid-template-areas: "title title" "query query" "variant-info variant-annotation" "metadata metadata";
+  align-items: stretch;
+  height: 100vh;
+  padding: 2em;
+  box-sizing: border-box;
+}
+/* line 107, ../sass/style.scss */
+body main #main-container.region {
+  grid-template-rows: 0.2fr 0.2fr 4.4fr;
+  gap: 20px 10px;
+  grid-template-areas: "title title" "query query" "metadata metadata";
+}
+/* line 117, ../sass/style.scss */
+body main #main-container .title {
+  grid-area: title;
+}
+/* line 121, ../sass/style.scss */
+body main #main-container .title h1 {
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 0.2em;
+  color: #7F7E7E;
+}
+/* line 129, ../sass/style.scss */
+body main #main-container .query {
+  grid-area: query;
+  background-color: white;
+  align-self: center;
+  height: 30px;
+}
+/* line 135, ../sass/style.scss */
+body main #main-container .query form {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-areas: "query-text query-button";
+  height: 100%;
+}
+/* line 142, ../sass/style.scss */
+body main #main-container .query form .query-text {
+  grid-area: query-text;
+}
+/* line 144, ../sass/style.scss */
+body main #main-container .query form .query-text input {
+  color: #7F7E7E;
+  border: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 100%;
+  padding: 8px 0 0 10px;
+}
+/* line 152, ../sass/style.scss */
+body main #main-container .query form .query-button {
+  grid-area: query-button;
+  background-color: white;
+  height: 100%;
+}
+/* line 156, ../sass/style.scss */
+body main #main-container .query form .query-button input {
+  color: #7F7E7E;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 12px;
+  background-color: white;
+  border: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-left: 0.5px solid #EFEFEF;
+}
+/* line 169, ../sass/style.scss */
+body main #main-container .query form .query-button input:hover {
+  background-color: #ECF0F9;
+  font-weight: normal;
+  border-left: none;
+}
+/* line 180, ../sass/style.scss */
+body main #main-container .variant-info {
+  align-self: center;
+  grid-area: variant-info;
+}
+/* line 187, ../sass/style.scss */
+body main #main-container .variant-annotation {
+  align-self: center;
+  grid-area: variant-annotation;
+}
+/* line 194, ../sass/style.scss */
+body main #main-container .metadata {
+  grid-area: metadata;
+  background-color: white;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/* line 203, ../sass/style.scss */
+body main #main-container .standard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+/* line 208, ../sass/style.scss */
+body main #main-container .standard-table tr {
+  height: 30px;
+  border: 1px solid #EFEFEF;
+}
+/* line 212, ../sass/style.scss */
+body main #main-container .standard-table td {
+  font-weight: lighter;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+/* line 220, ../sass/style.scss */
+body main #main-container .standard-table .table-title td {
+  text-align: left;
+  font-size: 12px;
+}
+/* line 226, ../sass/style.scss */
+body main #main-container .standard-table .table-header {
+  background-color: #ECF0F9;
+}
+/* line 228, ../sass/style.scss */
+body main #main-container .standard-table .table-header td {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+}
+/* line 235, ../sass/style.scss */
+body main #main-container .standard-table .table-content:hover td {
+  color: black;
+}
+/* line 236, ../sass/style.scss */
+body main #main-container .standard-table .table-content td {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: #7F7E7E;
+}
