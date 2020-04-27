@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Viral Beacon</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
+
+    <link href="stylesheets/style.css" type="text/css" rel="stylesheet" >
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+	  integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous" />
+      
+</head>
+<body>
+
+<header>
+    <img src="/img/beacon_project.png" alt="Logo">
+    <nav>
+        <a href="index.html" class="selected">
+            <i class="far fa-dot-circle"></i>
+            <span class="icon-text">SNP</span>
+        </a>
+        <a href="region.html">
+            <i class="fas fa-arrows-alt-h"></i>
+            <span class="icon-text">Region</span>
+        </a>
+        <a href="https://ega-archive.org/" target="_blank">
+            <i class="far fa-question-circle"></i>
+            <span class="icon-text">Help</span>
+        </a>
+    </nav>
+</header>
+
+<main class="region">
+    <h1>Viral Beacon - Region Query</h1>
+    <form action="">
+        <input id="query-text" type="text" name="query" placeholder="start position - end position">
+        <input id="query-button" type="submit" value="Search">
+    </form>
+    <div id="metadata">
+        <table class="standard-table">
+            <tbody>
+                <tr class="table-title">
+                    <td colspan="11">Variants</td>
+                </tr>
+                <tr class="table-header">
+                    <td>START</td>
+                    <td>END</td>
+                    <td>REFERENCE</td>
+                    <td>ALTERNATE</td>
+                    <td>VARIANT ID</td>
+                    <td>VARIANT TYPE</td>
+                    <td>VARIANT EFFECT</td>
+                    <td>GENOMIC REGION</td>
+                    <td>FUNCTIONAL REGION</td>
+                    <td>FREQUENCY</td>
+                    <td>CALLER</td>
+                    <td>RUN PLATFORM</td>
+                    <td>RUN ID</td>
+                    <td>SAMPLE ID</td>
+                    <td>SAMPLE TYPE</td>
+                    <td>COLLECTION DATE</td>
+                    <td>HOST AGE</td>
+                    <td>HOST SEX</td>
+                    <td>GEO ORIGIN</td>
+                    <td>DISEASE OUTCOME</td>
+                </tr>
+                {% if response %}
+                    {% for record in response %}
+                    <tr class="table-content">
+                        <td>{{ record.start }}</td>
+                        <td>{{ record.end }}</td>
+                        <td>{{ record.reference }}</td>
+                        <td>{{ record.alternate }}</td>
+                        <td>{{ record.variant_id }}</td>
+                        <td>{{ record.variant_type }}</td>
+                        <td>{{ record.variant_effect }}</td>
+                        <td>{{ record.genomic_region }}</td>
+                        <td>{{ record.functional_region }}</td>
+                        <td>{{ record.frequency }}</td>
+                        <td>{{ record.caller }}</td>
+                        <td>{{ record.frequency }}</td>
+                        <td>{{ record.run_platform }}</td>
+                        <td>{{ record.run_id }}</td>
+                        <td>{{ record.sample_id }}</td>
+                        <td>{{ record.collection_date }}</td>
+                        <td>{{ record.host_age }}</td>
+                        <td>{{ record.host_sex }}</td>
+                        <td>{{ record.geographical_origin }}</td>
+                        <td>{{ record.disease_outcome }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr class="table-content">
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div> 
+</main>
+
+</body>
+</html>
