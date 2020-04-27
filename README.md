@@ -1,2 +1,2 @@
-# viral_beacon-ui
-Mock-up of a Virus Beacon. 
+# Viral Beacon UI proposal
+Mock-up of UI for a Virus Beacon. 
