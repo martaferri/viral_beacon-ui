@@ -16,11 +16,9 @@
 </head>
 <body>
 
-<nav>
-    <div id="logo">
-        <img src="/img/beacon_project.png" alt="Logo">
-    </div>
-    <div id="nav-content">
+<header>
+    <img src="/img/beacon_project.png" alt="Logo">
+    <nav>
         <a href="index.html" class="selected">
             <i class="far fa-dot-circle"></i>
             <span class="icon-text">SNP</span>
@@ -33,131 +31,120 @@
             <i class="far fa-question-circle"></i>
             <span class="icon-text">Help</span>
         </a>
-    </div>
-</nav>
+    </nav>
+</header>
 
 <main>
-    <div id="main-container">
-        <div class="title">
-            <h1>Viral Beacon - SNP Query</h1>
-        </div>
-        <div class="query">
-            <!-- Inset the form here -->
-            <form action="">
-                <div class="query-text">
-                    <input type="text" name="" id="" placeholder="position : reference > alternate">
-                </div>
-                <div class="query-button">
-                    <input type="submit" value="Search">
-                </div>
-            </form>
-        </div>
-        <div class="variant-info">
-            <table class="standard-table">
-                <tbody>
-                    <tr class="table-title">
-                        <td colspan="4">Variant Basic Info</td>
-                    </tr>
-                    <tr class="table-header">
-                        <td>START</td>
-                        <td>END</td>
-                        <td>REFERENCE</td>
-                        <td>ALTERNATE</td>
-                    </tr>
-                    <tr class="table-content">
-                        <td>1546</td>
-                        <td>1547</td>
-                        <td>A</td>
-                        <td>T</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="variant-annotation">
-            <table class="standard-table">
-                <tbody>
-                    <tr class="table-title">
-                        <td colspan="5">Variant Annotation</td>
-                    </tr>
-                    <tr class="table-header">
-                        <td>VARIANT ID</td>
-                        <td>VARIANT TYPE</td>
-                        <td>VARIANT EFFECT</td>
-                        <td>GENOMIC REGION</td>
-                        <td>FUNCTIONAL REGION</td>
-                    </tr>
-                    <tr class="table-content">
-                        <td>rs1234</td>
-                        <td>SNP</td>
-                        <td>miss-sense</td>
-                        <td>ORF3a</td>
-                        <td>HVR</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="metadata">
-            <table class="standard-table">
-                <tbody>
-                    <tr class="table-title">
-                        <td colspan="11">Metadata</td>
-                    </tr>
-                    <tr class="table-header">
-                        <td>FREQUENCY</td>
-                        <td>CALLER</td>
-                        <td>RUN PLATFORM</td>
-                        <td>RUN ID</td>
-                        <td>SAMPLE ID</td>
-                        <td>SAMPLE TYPE</td>
-                        <td>COLLECTION DATE</td>
-                        <td>HOST AGE</td>
-                        <td>HOST SEX</td>
-                        <td>GEO ORIGIN</td>
-                        <td>DISEASE OUTCOME</td>
-                    </tr>
-                    <tr class="table-content">
-                        <td>0.2</td>
-                        <td>"GATK" based</td>
-                        <td>Illumina</td>
-                        <td>SRR10903402</td>
-                        <td>SRS6007145</td>
-                        <td>Bronchoalveolar lavage fluid</td>
-                        <td>2020-02-14</td>
-                        <td>50</td>
-                        <td>Male</td>
-                        <td>USA:WI:Madison</td>
-                        <td>resolution/discharge</td>
-                    </tr>
-                    <tr class="table-content">
-                        <td>0.2</td>
-                        <td>"GATK" based</td>
-                        <td>Illumina</td>
-                        <td>SRR10903403</td>
-                        <td>SRS6007146</td>
-                        <td>Bronchoalveolar lavage fluid</td>
-                        <td>2020-02-14</td>
-                        <td>23</td>
-                        <td>Male</td>
-                        <td>USA:WI:Madison</td>
-                        <td>resolution/discharge</td>
-                    </tr>
-                    <tr class="table-content">
-                        <td>0.2</td>
-                        <td>"GATK" based</td>
-                        <td>Illumina</td>
-                        <td>SRR10903404</td>
-                        <td>SRS6007147</td>
-                        <td>Bronchoalveolar lavage fluid</td>
-                        <td>2020-02-14</td>
-                        <td>24</td>
-                        <td>Male</td>
-                        <td>USA:WI:Madison</td>
-                        <td>resolution/discharge</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      </div>
+    <h1>Viral Beacon - SNP Query</h1>
+    <form action="">
+        <input id="query-text" type="text" name="query" placeholder="position : reference > alternate">
+        <input id="query-button" type="submit" value="Search">
+    </form>
+    <div id="variant-info">
+        <table class="standard-table">
+            <tbody>
+                <tr class="table-title">
+                    <td colspan="4">Variant Basic Info</td>
+                </tr>
+                <tr class="table-header">
+                    <td>START</td>
+                    <td>END</td>
+                    <td>REFERENCE</td>
+                    <td>ALTERNATE</td>
+                </tr>
+                <tr class="table-content">
+                    <td>1546</td>
+                    <td>1547</td>
+                    <td>A</td>
+                    <td>T</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="variant-annotation">
+        <table class="standard-table">
+            <tbody>
+                <tr class="table-title">
+                    <td colspan="5">Variant Annotation</td>
+                </tr>
+                <tr class="table-header">
+                    <td>VARIANT ID</td>
+                    <td>VARIANT TYPE</td>
+                    <td>VARIANT EFFECT</td>
+                    <td>GENOMIC REGION</td>
+                    <td>FUNCTIONAL REGION</td>
+                </tr>
+                <tr class="table-content">
+                    <td>rs1234</td>
+                    <td>SNP</td>
+                    <td>miss-sense</td>
+                    <td>ORF3a</td>
+                    <td>HVR</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="metadata">
+        <table class="standard-table">
+            <tbody>
+                <tr class="table-title">
+                    <td colspan="11">Metadata</td>
+                </tr>
+                <tr class="table-header">
+                    <td>FREQUENCY</td>
+                    <td>CALLER</td>
+                    <td>RUN PLATFORM</td>
+                    <td>RUN ID</td>
+                    <td>SAMPLE ID</td>
+                    <td>SAMPLE TYPE</td>
+                    <td>COLLECTION DATE</td>
+                    <td>HOST AGE</td>
+                    <td>HOST SEX</td>
+                    <td>GEO ORIGIN</td>
+                    <td>DISEASE OUTCOME</td>
+                </tr>
+                <tr class="table-content">
+                    <td>0.2</td>
+                    <td>"GATK" based</td>
+                    <td>Illumina</td>
+                    <td>SRR10903402</td>
+                    <td>SRS6007145</td>
+                    <td>Bronchoalveolar lavage fluid</td>
+                    <td>2020-02-14</td>
+                    <td>50</td>
+                    <td>Male</td>
+                    <td>USA:WI:Madison</td>
+                    <td>resolution/discharge</td>
+                </tr>
+                <tr class="table-content">
+                    <td>0.2</td>
+                    <td>"GATK" based</td>
+                    <td>Illumina</td>
+                    <td>SRR10903403</td>
+                    <td>SRS6007146</td>
+                    <td>Bronchoalveolar lavage fluid</td>
+                    <td>2020-02-14</td>
+                    <td>23</td>
+                    <td>Male</td>
+                    <td>USA:WI:Madison</td>
+                    <td>resolution/discharge</td>
+                </tr>
+                <tr class="table-content">
+                    <td>0.2</td>
+                    <td>"GATK" based</td>
+                    <td>Illumina</td>
+                    <td>SRR10903404</td>
+                    <td>SRS6007147</td>
+                    <td>Bronchoalveolar lavage fluid</td>
+                    <td>2020-02-14</td>
+                    <td>24</td>
+                    <td>Male</td>
+                    <td>USA:WI:Madison</td>
+                    <td>resolution/discharge</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 </body>

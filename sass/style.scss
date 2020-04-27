@@ -8,7 +8,7 @@ body {
     height: 100%;
     margin: 0;
 
-    nav {
+    header {
         height: 100%; /* Full-height: remove this if you want "auto" height */
         width: 50px; /* Set the width of the sidebar */
         position: fixed; /* Fixed Sidebar (stay in place on scroll) */
@@ -18,21 +18,19 @@ body {
         background-color: #FFFFFF; /* Black */
         overflow-x: visible; /* Disable horizontal scroll */
 
-        #logo {
-            background-color: #E9AE56;
-            height: 50px;
-            width: 50px;
-            text-align: center;
-
-            img {
-                height: 40px;
-                width: auto;
-                margin-top: 5px;
-
-            }
+        @media screen and (max-width:450px) {
+            // width: 30px; 
         }
 
-        #nav-content {
+        img {
+            background-color: #E9AE56;
+            height: 40px;
+            width: 23px;
+            text-align: center;
+            padding: 5px 13.5px 5px;
+        }
+
+        nav {
             padding-top: 20px;
 
             a {
@@ -56,9 +54,7 @@ body {
                     }
                 }
 
-                i {
-                    font-size: 20px;
-                }
+                i {font-size: 20px;}
 
                 .icon-text {
                     visibility: hidden;
@@ -82,166 +78,144 @@ body {
                         border-width: 4px;
                         border-style: solid;
                         border-color: transparent #A4A4A4 transparent transparent;
-                      }
+                    }
                 }
-              }
+            }
         }
-    
     }
 
     main {
         margin-left: 50px; /* Same as the width of the sidebar */
         
-        #main-container {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        grid-template-rows: 0.2fr 0.2fr 0.6fr 3fr;
+        gap: 20px 10px;
+        grid-template-areas: "title title" "query query" "variant-info variant-annotation" "metadata metadata";
+        align-items: stretch;
+
+        height: 100vh; 
+        padding: 2em;
+        box-sizing: border-box;
+
+        &.region {
+            grid-template-rows: 0.2fr 0.2fr 4.4fr;
+            gap: 25px;
+            grid-template-areas: "title title" "query query" "metadata metadata";
+        }
+
+        h1 {
+            display: block;
+            grid-area: title; 
+            font-size: 24px;
+            font-weight: lighter;
+            padding: 0.2em;
+            color: #7F7E7E;
+        }
+
+        form { 
+            grid-area: query; 
+            background-color: white;
+            height: 30px;
+
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            grid-template-rows: 0.2fr 0.2fr 0.6fr 3fr;
-            gap: 20px 10px;
-            grid-template-areas: "title title" "query query" "variant-info variant-annotation" "metadata metadata";
-            align-items: stretch;
+            grid-template-columns: 85% 15%;
+            grid-template-areas: "query-text query-button";
 
-            height: 100vh; 
-            padding: 2em;
-            box-sizing: border-box;
-
-            &.region {
-                grid-template-rows: 0.2fr 0.2fr 4.4fr;
-                gap: 20px 10px;
-                grid-template-areas: "title title" "query query" "metadata metadata";
-            }
-
-            div {
-                // border: 1px solid grey;
-            }
-
-            .title {
-                grid-area: title; 
-                // border: 0px;
-
-                h1 {
-                    font-size: 24px;
-                    font-weight: lighter;
-                    padding: 0.2em;
-                    color: #7F7E7E;
-                }
-            }
-
-            .query { 
-                grid-area: query; 
-                background-color: white;
-                align-self: center;
-                height: 30px;
-
-                form {
-                    display: grid;
-                    grid-template-columns: 85% 15%;
-                    grid-template-areas: "query-text query-button";
-
-                    height: 100%;
-
-                    .query-text {
-                        grid-area: query-text;
-                        input {
-                            color: #7F7E7E;
-                            border: none;
-                            font-family: 'IBM Plex Sans', sans-serif;
-                            font-size: 12px;
-                            width: 100%;
-                            padding: 7px 0 0 10px;
-                        }
-                    }
-                    .query-button {
-                        grid-area: query-button;
-                        background-color: white;
-                        height: 100%;
-                        input {
-                            color: #7F7E7E;
-                            font-family: 'IBM Plex Sans', sans-serif;
-                            font-weight: lighter;
-                            font-size: 12px;
-                            background-color: white;
-                            border: none;
-                            transition-duration: 0.4s;
-                            cursor: pointer;
-                            padding: 0;
-                            width: 100%;
-                            height: 100%;
-                            border-left: 0.5px solid #EFEFEF;
-                            &:hover {
-                                background-color: #ECF0F9;
-                                font-weight: normal;
-                                border-left: none;
-                            }
-                        }
-                    }
-                }
-                
-            }
-  
-            .variant-info { 
-                align-self: center;
-                grid-area: variant-info; 
-                // padding-top: 10px;
-                // background-color: white;
-            }
-            
-            .variant-annotation { 
-                align-self: center;
-                grid-area: variant-annotation; 
-                // background-color: white;
-
-            }
-            
-            .metadata { 
-                grid-area: metadata; 
-                background-color: white;
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-          
-
-            .standard-table {
+            #query-text {
+                grid-area: query-text;
+                color: #7F7E7E;
+                border: none;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 12px;
                 width: 100%;
-                border-collapse: collapse;
+                padding-left: 10px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            #query-button {
+                grid-area: query-button;
                 background-color: white;
-
-                tr { 
-                    height: 30px;
-                    border: 1px solid #EFEFEF;
-                }
-                td { 
-                    font-weight: normal;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    text-align: center;
-                }
-
-                .table-title {
-                    td {
-                        font-weight: lighter;
-                        text-align: left;
-                        font-size: 12px;
-                    }
-                }
-
-                .table-header {
+                height: 100%;
+                
+                color: #7F7E7E;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: lighter;
+                font-size: 12px;
+                background-color: white;
+                border: none;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                border-left: 0.5px solid #EFEFEF;
+                &:hover {
                     background-color: #ECF0F9;
-                    td {
-                        font-family:'IBM Plex Mono', monospace;
-                        font-size: 10px;
-                    }                 
-                }
-                .table-content {
-                    
-                    &:hover { td {color: black;}}
-                    td {
-                        font-family:'IBM Plex Mono', monospace;
-                        font-size: 10px;
-                        color: #7F7E7E;
-                    }                
+                    font-weight: normal;
+                    border-left: none;
                 }
             }
         }
+
+        #variant-info { 
+            align-self: center;
+            grid-area: variant-info; 
+        }
+        
+        #variant-annotation { 
+            align-self: center;
+            grid-area: variant-annotation; 
+        }
+        
+        #metadata { 
+            grid-area: metadata; 
+            background-color: white;
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+
+        .standard-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+
+            tr { 
+                height: 30px;
+                border: 1px solid #EFEFEF;
+            }
+            td { 
+                font-weight: normal;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: center;
+            }
+
+            .table-title {
+                td {
+                    font-weight: lighter;
+                    text-align: left;
+                    font-size: 12px;
+                }
+            }
+            .table-header {
+                background-color: #ECF0F9;
+                td {
+                    font-family:'IBM Plex Mono', monospace;
+                    font-size: 10px;
+                }                 
+            }
+            .table-content {
+                &:hover {td {color: black;}}
+                td {
+                    font-family:'IBM Plex Mono', monospace;
+                    font-size: 10px;
+                    color: #7F7E7E;
+                }                
+            }
+        } 
     }
 }
