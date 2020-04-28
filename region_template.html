@@ -41,81 +41,59 @@
         <input id="query-button" type="submit" value="Search">
     </form>
     <div id="metadata">
+        <h2 class="standard-table-title">Variants</h2>
         <table class="standard-table">
+            <thead>
+                <tr>
+                    <th>START</th>
+                    <th>END</th>
+                    <th>REFERENCE</th>
+                    <th>ALTERNATE</th>
+                    <th>VARIANT ID</th>
+                    <th>VARIANT TYPE</th>
+                    <th>VARIANT EFFECT</th>
+                    <th>GENOMIC REGION</th>
+                    <th>FUNCTIONAL REGION</th>
+                    <th>FREQUENCY</th>
+                    <th>CALLER</th>
+                    <th>RUN PLATFORM</th>
+                    <th>RUN ID</th>
+                    <th>SAMPLE ID</th>
+                    <th>SAMPLE TYPE</th>
+                    <th>COLLECTION DATE</th>
+                    <th>HOST AGE</th>
+                    <th>HOST SEX</th>
+                    <th>GEO ORIGIN</th>
+                    <th>DISEASE OUTCOME</th>
+                </tr>
+            </thead>
             <tbody>
-                <tr class="table-title">
-                    <td colspan="11">Variants</td>
-                </tr>
-                <tr class="table-header">
-                    <td>START</td>
-                    <td>END</td>
-                    <td>REFERENCE</td>
-                    <td>ALTERNATE</td>
-                    <td>VARIANT ID</td>
-                    <td>VARIANT TYPE</td>
-                    <td>VARIANT EFFECT</td>
-                    <td>GENOMIC REGION</td>
-                    <td>FUNCTIONAL REGION</td>
-                    <td>FREQUENCY</td>
-                    <td>CALLER</td>
-                    <td>RUN PLATFORM</td>
-                    <td>RUN ID</td>
-                    <td>SAMPLE ID</td>
-                    <td>SAMPLE TYPE</td>
-                    <td>COLLECTION DATE</td>
-                    <td>HOST AGE</td>
-                    <td>HOST SEX</td>
-                    <td>GEO ORIGIN</td>
-                    <td>DISEASE OUTCOME</td>
-                </tr>
                 {% if response %}
                     {% for record in response %}
-                    <tr class="table-content">
-                        <td>{{ record.start }}</td>
-                        <td>{{ record.end }}</td>
-                        <td>{{ record.reference }}</td>
-                        <td>{{ record.alternate }}</td>
-                        <td>{{ record.variant_id }}</td>
-                        <td>{{ record.variant_type }}</td>
-                        <td>{{ record.variant_effect }}</td>
-                        <td>{{ record.genomic_region }}</td>
-                        <td>{{ record.functional_region }}</td>
-                        <td>{{ record.frequency }}</td>
-                        <td>{{ record.caller }}</td>
-                        <td>{{ record.frequency }}</td>
-                        <td>{{ record.run_platform }}</td>
-                        <td>{{ record.run_id }}</td>
-                        <td>{{ record.sample_id }}</td>
-                        <td>{{ record.collection_date }}</td>
-                        <td>{{ record.host_age }}</td>
-                        <td>{{ record.host_sex }}</td>
-                        <td>{{ record.geographical_origin }}</td>
-                        <td>{{ record.disease_outcome }}</td>
+                    <tr>
+                        <td>{{ record.start|default("-")}}</td>
+                        <td>{{ record.end|default("-",true) }}</td>
+                        <td>{{ record.reference|default("-",true) }}</td>
+                        <td>{{ record.alternate|default("-",true) }}</td>
+                        <td>{{ record.variant_id|default("-",true) }}</td>
+                        <td>{{ record.variant_type|default("-",true) }}</td>
+                        <td>{{ record.variant_effect|default("-",true) }}</td>
+                        <td>{{ record.genomic_region|default("-",true) }}</td>
+                        <td>{{ record.functional_region|default("-",true) }}</td>
+                        <td>{{ record.variant_frequency|default("-") }}</td>
+                        <td>{{ record.variant_caller|default("-",true) }}</td>
+                        <td>{{ record.exp_platform_model|default("-",true) }}</td>
+                        <td>{{ record.run_id|default("-",true) }}</td>
+                        <td>{{ record.biosample_id|default("-",true) }}</td>
+                        <td>{{ record.biosample_type|default("-",true) }}</td>
+                        <td>{{ record.collection_date|default("-",true) }}</td>
+                        <td>{{ record.individual_age|default("-",true) }}</td>
+                        <td>{{ record.individual_sex|default("-",true) }}</td>
+                        <td>{{ record.geo_origin|default("-",true) }}</td>
+                        <td>{{ record.disease|default("-",true) }}</td>
+                        <td>{{ record.disease_outcome|default("-",true) }}</td>
                     </tr>
                     {% endfor %}
-                {% else %}
-                    <tr class="table-content">
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
                 {% endif %}
             </tbody>
         </table>

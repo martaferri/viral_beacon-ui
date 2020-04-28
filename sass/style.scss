@@ -181,6 +181,19 @@ body {
             white-space: nowrap;
         }
         
+        .standard-table-title {
+            display: inline-block;
+            height: 30px;
+            width: 100%;
+            // border: 1px solid #EFEFEF;
+            font-weight: lighter;
+            text-align: left;
+            font-size: 12px;
+            padding: 10px 0 0 10px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            background-color: white;
+        }
 
         .standard-table {
             width: 100%;
@@ -191,35 +204,30 @@ body {
                 height: 30px;
                 border: 1px solid #EFEFEF;
             }
-            td { 
+
+            th {
                 font-weight: normal;
                 padding-left: 10px;
                 padding-right: 10px;
                 text-align: center;
+                font-family:'IBM Plex Mono', monospace;
+                font-size: 10px;
+                background-color: #ECF0F9;
             }
 
-            .table-title {
-                td {
-                    font-weight: lighter;
-                    text-align: left;
-                    font-size: 12px;
+            td {
+                font-weight: normal;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: center;
+                font-family:'IBM Plex Mono', monospace;
+                font-size: 10px;
+                color: #7F7E7E;
+            }
+
+            tbody tr:hover {
+                    td {color: black;}
                 }
-            }
-            .table-header {
-                background-color: #ECF0F9;
-                td {
-                    font-family:'IBM Plex Mono', monospace;
-                    font-size: 10px;
-                }                 
-            }
-            .table-content {
-                &:hover {td {color: black;}}
-                td {
-                    font-family:'IBM Plex Mono', monospace;
-                    font-size: 10px;
-                    color: #7F7E7E;
-                }                
-            }
         } 
     }
 }

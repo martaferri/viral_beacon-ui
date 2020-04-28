@@ -248,46 +248,51 @@ body main #metadata {
   overflow-x: auto;
   white-space: nowrap;
 }
-/* line 185, ../sass/style.scss */
+/* line 184, ../sass/style.scss */
+body main .standard-table-title {
+  display: inline-block;
+  height: 30px;
+  width: 100%;
+  font-weight: lighter;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px 0 0 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background-color: white;
+}
+/* line 198, ../sass/style.scss */
 body main .standard-table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
 }
-/* line 190, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 body main .standard-table tr {
   height: 30px;
   border: 1px solid #EFEFEF;
 }
-/* line 194, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
+body main .standard-table th {
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  background-color: #ECF0F9;
+}
+/* line 218, ../sass/style.scss */
 body main .standard-table td {
   font-weight: normal;
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
-}
-/* line 202, ../sass/style.scss */
-body main .standard-table .table-title td {
-  font-weight: lighter;
-  text-align: left;
-  font-size: 12px;
-}
-/* line 208, ../sass/style.scss */
-body main .standard-table .table-header {
-  background-color: #ECF0F9;
-}
-/* line 210, ../sass/style.scss */
-body main .standard-table .table-header td {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-}
-/* line 216, ../sass/style.scss */
-body main .standard-table .table-content:hover td {
-  color: black;
-}
-/* line 217, ../sass/style.scss */
-body main .standard-table .table-content td {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10px;
   color: #7F7E7E;
+}
+/* line 229, ../sass/style.scss */
+body main .standard-table tbody tr:hover td {
+  color: black;
 }
